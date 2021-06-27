@@ -24,7 +24,7 @@
             <h1 class="text-center">Ejercicio 1</h1>
             <h5 class="" id="">Velocidad de percepción</h5>
 
-            <div class="jumbotron">
+            <div class="jumbotron" id="ventana_show">
                 <div class="row justify-content-center text-center">
                     <div class="col-sm-3 ventana" id="visor">Click Start</div>
                 </div>
@@ -40,10 +40,10 @@
                     Stop
                 </button>
             </div>
-            <div class="jumbotron">
+            <div class="jumbotron" id="temporizador">
                 <h4>Temporizador</h4>
                 <section>
-                    <div>
+                    <div id="control_tiempo">
                         <span id="disminuir">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-square" viewBox="0 0 16 16">
                                 <path d="M3.626 6.832A.5.5 0 0 1 4 6h8a.5.5 0 0 1 .374.832l-4 4.5a.5.5 0 0 1-.748 0l-4-4.5z"/>
@@ -58,7 +58,7 @@
                             </svg>
                         </span>
                     </div>
-                    <div class="justify-content-center text-center">
+                    <div class="justify-content-center text-center" id="tiempo_restante">
                         <h5>Remain <span id="remain">00</span></h5>
                         <p><span class="visually-hidden" id="milisegundos">0</span></p>
                     </div>

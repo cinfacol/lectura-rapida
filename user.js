@@ -35,15 +35,24 @@ document.getElementById('restart').style.display= 'none';
 
 function arranque() {
     atenuar.classList.add('fondo');
-    document.getElementById('start').style.display = 'none';
-    document.getElementById('restart').style.display = 'none';
-    document.getElementById('stop').style.display = 'block';
+    preparacion();
+
     mostrarLista();
     let tmp = document.getElementById('milisegundos').innerHTML;
     if (tmp == 0) {
         tiempoProgramado();
     }
 
+function preparacion() {
+    document.getElementById('start').style.display = 'none';
+    document.getElementById('restart').style.display = 'none';
+    document.getElementById('stop').style.display = 'block';
+    document.getElementById('control_tiempo').style.display = 'none';
+    document.getElementById('visor').style.color = 'black';
+    document.getElementById('temporizador').style.background = 'darkgray';
+    document.getElementById('ventana_show').style.background = 'darkgray';
+    document.getElementById('tempo').style.background = 'darkgray';
+}
     let contador = document.getElementById('milisegundos').innerHTML;
     countInterval = setInterval(function() {
         contador = contador - 1000;
@@ -86,6 +95,8 @@ function detener() {
     document.getElementById('start').style.display = 'none';
     document.getElementById('restart').style.display = 'block';
     document.getElementById('stop').style.display = 'none';
+    document.getElementById('ventana_show').removeAttribute("style");
+    document.getElementById('control_tiempo').removeAttribute("style");
     clearInterval(starter);
     clearInterval(countInterval);
 }
@@ -94,6 +105,10 @@ function timeOver() {
     document.getElementById('start').style.display = 'block';
     document.getElementById('restart').style.display = 'none';
     document.getElementById('stop').style.display = 'none';
+    document.getElementById('ventana_show').removeAttribute("style");
+    document.getElementById('temporizador').removeAttribute("style");
+    document.getElementById('control_tiempo').removeAttribute("style");
+    document.getElementById('tempo').removeAttribute("style");
     clearInterval(starter);
     clearInterval(countInterval);
 }
